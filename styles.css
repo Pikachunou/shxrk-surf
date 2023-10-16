@@ -1,0 +1,60 @@
+/* Reset default margin and padding */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+/* Style the header at the top left corner */
+header {
+    background-color: #333;
+    padding: 10px;
+}
+
+.Introduction {
+    margin-bottom: 20px;
+}
+
+.front {
+    text-align: center;
+    font-size: 200%;
+    color:black;
+}
+/* Style navigation links */
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+/* Center content and style it */
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.animated-text {
+    animation: slideDown 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+.Introduction-text {
+    font-size: large;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
