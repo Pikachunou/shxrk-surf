@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    console.log(addToCartButtons);
+    console.log(addToCartButtons)
     const cartItems = document.getElementById('cart-items');
     console.log(cartItems);
     const cartTotal = document.getElementById('cart-total');

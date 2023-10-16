@@ -3,6 +3,7 @@
 <head>
     <title>Products</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="products.css">
     <script src="checkout.js"></script>
 </head>
 <body>
@@ -17,18 +18,24 @@
     </header>
     <section id="products" class="content">
         <h2>Products</h2>
-        <!-- Product listings with "Add to Cart" buttons -->
         <div class="product">
-            <h3>Product 1</h3>
-            <p>Description of Product 1.</p>
-            <button class="add-to-cart" data-product="Product 1" data-price="19.99">Add to Cart</button>
+            <div class="card">
+                <img src="./assets/jeans.png" alt="Denim Jeans" style="width:100%">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>very nice jeans</p>
+                <button class="add-to-cart" data-product="Product 1" data-price="19.99">Add to Cart</button>
+              </div>
         </div>
         <div class="product">
-            <h3>Product 2</h3>
-            <p>Description of Product 2.</p>
-            <button class="add-to-cart" data-product="Product 2" data-price="24.99">Add to Cart</button>
+            <div class="card">
+                <img src="./assets/banana.png" alt="Denim Jeans" style="width:100%">
+                <h1>Banana Dress Shirt</h1>
+                <p class="price">$69.99</p>
+                <p>Perfect dress shirt for your meetings.</p>
+                <button class="add-to-cart" data-product="Product 2" data-price="69.99">Add to Cart</button>
+              </div>
         </div>
-        <!-- More product listings -->
     </section>
 </body>
 </html>
