@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     console.log(addToCartButtons);
-    const cartItems = document.getElementById('cart-items');
+    const cartItems = document.getElementById('items-cart');
     console.log(cartItems);
     const cartTotal = document.getElementById('cart-total');
     const cartContents = [];

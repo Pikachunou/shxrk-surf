@@ -11,3 +11,20 @@ document.querySelectorAll('nav a').forEach(anchor => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var banner = document.getElementById("cookie-consent-banner");
+  var acceptButton = document.getElementById("accept-cookies");
+
+  var hasAcceptedCookies = localStorage.getItem("cookiesAccepted");
+
+  if (!hasAcceptedCookies) {
+      banner.style.display = "block";
+  }
+
+  acceptButton.addEventListener("click", function () {
+      localStorage.setItem("cookiesAccepted", "true");
+      banner.style.display = "none";
+  });
+});
+
