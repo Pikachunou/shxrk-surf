@@ -1,12 +1,8 @@
-// checkout.js
-
-// Function to set a cookie
 function setCookie(name, value, days) {
     const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
     document.cookie = `${name}=${value}; expires=${expires}; path=/`;
 }
 
-// Function to get a cookie by name
 function getCookie(name) {
     const cookies = document.cookie.split(';');
     for (const cookie of cookies) {
@@ -20,19 +16,16 @@ function getCookie(name) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to get cart data from cookies
     function getCartFromCookies() {
         const cart = JSON.parse(getCookie('cart')) || [];
         return cart;
     }
-
-    // Function to display cart items on the checkout page
     function displayCartOnCheckout() {
         const cart = getCartFromCookies();
         const cartItems = document.getElementById('cart-items');
         const cartTotal = document.getElementById('cart-total');
 
-        cartItems.innerHTML = ''; // Clear any existing cart items
+        cartItems.innerHTML = ''; 
         let total = 0;
 
         cart.forEach(item => {
@@ -45,5 +38,5 @@ document.addEventListener('DOMContentLoaded', function() {
         cartTotal.textContent = total.toFixed(2);
     }
 
-    displayCartOnCheckout(); // Display the cart on page load
+    displayCartOnCheckout();
 });
