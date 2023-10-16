@@ -1,29 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    console.log(addToCartButtons);
-    const cartItems = document.getElementById('items-cart');
-    console.log(cartItems);
-    const cartTotal = document.getElementById('cart-total');
-    const cartContents = [];
-//this works
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const product = this.getAttribute('data-product');
-            console.log(product);
-            const price = parseFloat(this.getAttribute('data-price'));
-            console.log(price);
-            cartContents.push({ product, price });
-            updateCart();
-        });
-    });
+// checkout.js
 
-    function updateCart() {
-        cartItems.innerHTML = '';
+// Function to set a cookie
+function setCookie(name, value, days) {
+    const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+// Function to get a cookie by name
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.trim().split('=');
+        if (cookieName === name) {
+            return cookieValue;
+        }
+    }
+    return null;
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to get cart data from cookies
+    function getCartFromCookies() {
+        const cart = JSON.parse(getCookie('cart')) || [];
+        return cart;
+    }
+
+    // Function to display cart items on the checkout page
+    function displayCartOnCheckout() {
+        const cart = getCartFromCookies();
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+
+        cartItems.innerHTML = ''; // Clear any existing cart items
         let total = 0;
 
-        cartContents.forEach(item => {
+        cart.forEach(item => {
             const listItem = document.createElement('li');
-            console.log(listItem)
             listItem.textContent = `${item.product} - $${item.price.toFixed(2)}`;
             cartItems.appendChild(listItem);
             total += item.price;
@@ -31,4 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         cartTotal.textContent = total.toFixed(2);
     }
+
+    displayCartOnCheckout(); // Display the cart on page load
 });
