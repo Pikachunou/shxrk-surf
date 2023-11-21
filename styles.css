@@ -7,6 +7,13 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+.layer1 {
+    margin: 0;
+    padding: 0;
+    background: url('wave.svg') no-repeat center center fixed;
+    background-size: cover;
+}
+
 header {
     background-color: #333;
     padding: 10px;
@@ -25,6 +32,10 @@ header {
 }
 
 .contact {
+    margin-top: 1000px;
+}
+
+.background {
     margin-top: 1000px;
 }
 
