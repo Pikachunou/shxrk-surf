@@ -1,0 +1,101 @@
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    padding: 10px;
+}
+
+#title-page {
+    text-align: center;
+}
+
+.Introduction {
+    margin-bottom: 20px;
+}
+
+.social-media {
+    margin-top: 1000px;
+}
+
+.contact {
+    margin-top: 1000px;
+}
+
+.front {
+    text-align: center;
+    font-size: 200%;
+    color:black;
+}
+/* Style navigation links */
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+/* Center content and style it */
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.animated-text {
+    animation: slideDown 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+.Introduction-text {
+    font-size: large;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.banner-content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#accept-cookies {
+    background: #0073e6;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#accept-cookies:hover {
+    background: #0050a0;
+}
